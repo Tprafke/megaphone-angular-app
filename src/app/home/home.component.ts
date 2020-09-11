@@ -8,24 +8,12 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  representatives: any;
-  test: string = '7861%Quincy%St.%Zeeland%MI';
-
   constructor(
     private route: ActivatedRoute,
     private service: MegaphoneService
   ) {}
 
-  ngOnInit(): void {
-    this.getReps();
-  }
-
-  getReps = () => {
-    this.service.getData(this.test).subscribe((response) => {
-      console.log(response);
-      this.representatives = response.hits;
-    });
-  };
+  ngOnInit(): void {}
 
   // getRecipes = () => {
   //   this.route.queryParamMap.subscribe((params) => {
