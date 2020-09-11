@@ -1,5 +1,5 @@
-<form>
-  <label for="address" class="address-label">Address</label>
+<form #addressInput="ngForm" (ngSubmit)="search(addressInput)">
+  <label for="address" class="address-label">Address:</label>
   <input type="text" name="address" id="address" class="input" ngModel />
-  <button class="btn">SEARCH</button>
+  <button class="btn">Search</button>
 </form>

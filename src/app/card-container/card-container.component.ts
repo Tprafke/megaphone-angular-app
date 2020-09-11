@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CardContainerComponent implements OnInit {
   representatives: any;
-  test: string = '516 Benjamin Ave..... Grand Rapids, Michigan';
+  // test: string = '';
   constructor(
     private route: ActivatedRoute,
     private service: MegaphoneService
@@ -20,21 +20,15 @@ export class CardContainerComponent implements OnInit {
   }
 
   getReps = () => {
-    this.service.getData(this.test).subscribe((response) => {
-      console.log(response);
-      this.representatives = response.officials;
-      console.log(this.representatives);
+    this.route.queryParamMap.subscribe((params) => {
+      console.log(params);
+      let address: any = params['params'];
+      console.log(address.address);
+      this.service.getData(address.address).subscribe((response) => {
+        console.log(response);
+        this.representatives = response.officials;
+        console.log(this.representatives);
+      });
     });
   };
 }
-// getRecipes = () => {
-//   this.route.queryParamMap.subscribe((params) => {
-//     console.log(params);
-//     let test: any = params['params'];
-//     console.log(test);
-//     this.service.getData(test).subscribe((response) => {
-//       console.log(response);
-//       this.recipes = response.hits;
-//     });
-//   });
-// };
