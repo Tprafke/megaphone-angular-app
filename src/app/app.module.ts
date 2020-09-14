@@ -13,9 +13,10 @@ import { CardComponent } from './card/card.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { AboutComponent } from './about/about.component';
 import { CountdownComponent } from './countdown/countdown.component';
+import { FavoritesComponent } from './favorites/favorites.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, NotFoundComponent, AddressInputComponent, CardContainerComponent, HeaderComponent, CardComponent, WelcomeComponent, AboutComponent, CountdownComponent],
+  declarations: [AppComponent, HomeComponent, NotFoundComponent, AddressInputComponent, CardContainerComponent, HeaderComponent, CardComponent, WelcomeComponent, AboutComponent, CountdownComponent, FavoritesComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
