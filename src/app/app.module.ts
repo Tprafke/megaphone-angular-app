@@ -14,10 +14,29 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { AboutComponent } from './about/about.component';
 import { CountdownComponent } from './countdown/countdown.component';
 import { FavoritesComponent } from './favorites/favorites.component';
+import { GooglePlaceModule } from 'ngx-google-places-autocomplete';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, NotFoundComponent, AddressInputComponent, CardContainerComponent, HeaderComponent, CardComponent, WelcomeComponent, AboutComponent, CountdownComponent, FavoritesComponent],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    NotFoundComponent,
+    AddressInputComponent,
+    CardContainerComponent,
+    HeaderComponent,
+    CardComponent,
+    WelcomeComponent,
+    AboutComponent,
+    CountdownComponent,
+    FavoritesComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    GooglePlaceModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
