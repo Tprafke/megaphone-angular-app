@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./address-input.component.css'],
 })
 export class AddressInputComponent implements OnInit {
-  formattedAddress = '';
+  formattedAddress: any = '';
 
   options = {
     componentRestrictions: {
@@ -24,11 +24,10 @@ export class AddressInputComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  search = (form: NgForm) => {
-    console.log(form);
+  search = () => {
     this.router.navigate(['home'], {
       queryParams: {
-        address: form.value.address,
+        address: this.formattedAddress,
       },
     });
   };
