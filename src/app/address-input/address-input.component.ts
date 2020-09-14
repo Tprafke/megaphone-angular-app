@@ -8,6 +8,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./address-input.component.css'],
 })
 export class AddressInputComponent implements OnInit {
+  formattedAddress = '';
+
+  options = {
+    componentRestrictions: {
+      country: ['US'],
+    },
+  };
+
+  public handleAddressChange(address: any) {
+    this.formattedAddress = address.formatted_address;
+  }
+
   constructor(private router: Router) {}
 
   ngOnInit(): void {}
