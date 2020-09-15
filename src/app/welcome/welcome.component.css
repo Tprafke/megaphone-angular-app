@@ -1,0 +1,33 @@
+.welcome-section {
+  width: 100%;
+  height: 500px;
+  background-image: linear-gradient(to top, #fff, rgba(255, 255, 255, 0)),
+    url("/assets/flag.jpg");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mega {
+  color: #ff5c65;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.megaphone-icon {
+  filter: invert(12%) sepia(33%) saturate(4397%) hue-rotate(201deg)
+    brightness(83%) contrast(94%);
+  height: 100px;
+  width: auto;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 5%;
+  color: #0a2852;
+  height: 300px;
+  width: 400px;
+}
