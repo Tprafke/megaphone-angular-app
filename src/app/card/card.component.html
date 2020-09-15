@@ -4,9 +4,11 @@
       <img src="{{ repRef.photoUrl }}" alt="" class="image" />
     </p>
     <p>{{ repRef.name }}</p>
+    <p>{{ repRef.titles }}</p>
+    <p>{{ repRef.party }}</p>
     <p>{{ repRef.phones }}</p>
     <p>{{ repRef.emails }}</p>
     <a href="{{ repRef.urls }}" class="website">Website</a>
+    <button (click)="addFavorite(repRef)">Track Rep</button>
   </li>
-  <button (click)="addFavorite(repRef)">Track Rep</button>
 </div>
