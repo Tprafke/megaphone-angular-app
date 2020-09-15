@@ -6,9 +6,22 @@
     <p>{{ repRef.name }}</p>
     <p>{{ repRef.titles }}</p>
     <p>{{ repRef.party }}</p>
+
+    <button class="showBtn" (click)="addFavorite(repRef)">Track Rep</button>
+    <button *ngIf="showReps === false" (click)="toggleCard()" class="showBtn">
+      See More
+    </button>
+  </li>
+</div>
+<div *ngIf="showReps === true" class="card-container">
+  <div class="rep-card">
+    <button class="btnx" (click)="toggleCard()">X</button>
+    <img src="{{ repRef.photoUrl }}" alt="" class="image" />
+    <p>{{ repRef.name }}</p>
+    <p>{{ repRef.titles }}</p>
+    <p>{{ repRef.party }}</p>
     <p>{{ repRef.phones }}</p>
     <p>{{ repRef.emails }}</p>
     <a href="{{ repRef.urls }}" class="website">Website</a>
-    <button (click)="addFavorite(repRef)">Track Rep</button>
-  </li>
+  </div>
 </div>
