@@ -8,9 +8,11 @@ import { MegaphoneService } from '../megaphone.service';
 })
 export class CardComponent implements OnInit {
   @Input() repRef: any;
-
+  showReps: boolean = false;
   constructor(private service: MegaphoneService) {}
-
+  toggleCard = () => {
+    this.showReps = !this.showReps;
+  };
   addFavorite(favorite: any) {
     this.service.addFavorite(favorite);
   }
