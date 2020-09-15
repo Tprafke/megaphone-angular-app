@@ -8,7 +8,8 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./card-container.component.css'],
 })
 export class CardContainerComponent implements OnInit {
-  representatives: any;
+  offices: any;
+  officials: any;
   constructor(
     private route: ActivatedRoute,
     private service: MegaphoneService
@@ -24,9 +25,21 @@ export class CardContainerComponent implements OnInit {
       let address: any = params['params'];
       console.log(address.address);
       this.service.getData(address.address).subscribe((response) => {
-        console.log(response);
-        this.representatives = response.officials;
-        console.log(this.representatives);
+        //this.representatives = response;
+        this.offices = response.offices;
+        this.officials = response.officials;
+
+        console.log(this.offices);
+
+        this.officials.forEach((official, index) => {
+          official.titles = [];
+          this.offices.forEach((office) => {
+            if (office.officialIndices.includes(index)) {
+              official.titles.push(office.name);
+            }
+          });
+        });
+        console.log(this.officials);
       });
     });
   };
