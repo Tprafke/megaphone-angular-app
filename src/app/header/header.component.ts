@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
+import { MegaphoneService } from '../megaphone.service';
 
 @Component({
   selector: 'app-header',
@@ -8,10 +10,14 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
   showNav = false;
 
-  constructor() {}
+  constructor(private location: Location, private service: MegaphoneService) {}
   toggleNav = () => {
     this.showNav = !this.showNav;
   };
+
+  goBack() {
+    this.location.back();
+  }
 
   ngOnInit(): void {}
 }
