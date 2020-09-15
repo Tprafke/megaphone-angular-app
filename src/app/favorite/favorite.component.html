@@ -1,10 +1,10 @@
 <p>favorite works!</p>
 <li class="card">
-  <img src="{{ favoriteRef.photoUrl }}" />
+  <img src="{{ favoriteRef.photoUrl }}" class="image" />
   <p class="label">{{ favoriteRef.name }}</p>
   <p class="label">{{ favoriteRef.phones }}</p>
   <p class="label">{{ favoriteRef.emails }}</p>
-  <a href="{{ favoriteRef.urls }}"></a>
+  <a href="{{ favoriteRef.urls }}" class="Website">Website</a>
 
   <button class="btn" (click)="deleteFavorite()">Remove</button>
 </li>

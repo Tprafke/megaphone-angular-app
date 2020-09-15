@@ -25,6 +25,7 @@ export class AddressInputComponent implements OnInit {
   ngOnInit(): void {}
 
   search = () => {
+    console.log(this.formattedAddress);
     this.router.navigate(['home'], {
       queryParams: {
         address: this.formattedAddress,

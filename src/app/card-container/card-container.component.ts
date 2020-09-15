@@ -9,7 +9,6 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CardContainerComponent implements OnInit {
   representatives: any;
-  // test: string = '';
   constructor(
     private route: ActivatedRoute,
     private service: MegaphoneService
