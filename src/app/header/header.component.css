@@ -27,6 +27,10 @@
   padding: 10px;
 }
 
+/* .animation {
+  -webkit-animation: 4s;
+} */
+
 .link:hover {
   cursor: pointer;
   color: #ff5c65;

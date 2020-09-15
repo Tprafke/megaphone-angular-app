@@ -1,1 +1,9 @@
-<p>favorites works!</p>
+<app-header></app-header>
+<ul>
+  <app-favorite
+    *ngFor="let favorite of favorites; index as i"
+    [favoriteRef]="favorite"
+    (deleted)="onDelete(i)"
+  >
+  </app-favorite>
+</ul>

@@ -15,6 +15,7 @@ import { AboutComponent } from './about/about.component';
 import { CountdownComponent } from './countdown/countdown.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { GooglePlaceModule } from 'ngx-google-places-autocomplete';
+import { FavoriteComponent } from './favorite/favorite.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { GooglePlaceModule } from 'ngx-google-places-autocomplete';
     AboutComponent,
     CountdownComponent,
     FavoritesComponent,
+    FavoriteComponent,
   ],
   imports: [
     BrowserModule,
