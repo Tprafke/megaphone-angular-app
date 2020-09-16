@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MegaphoneService } from '../megaphone.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-card',
@@ -9,13 +10,31 @@ import { MegaphoneService } from '../megaphone.service';
 export class CardComponent implements OnInit {
   @Input() repRef: any;
   showReps: boolean = false;
+  showForm: boolean = false;
+  showMessage: boolean = false;
+  email: string;
+  emailBody: string;
+  emailSubject: string;
   constructor(private service: MegaphoneService) {}
   toggleCard = () => {
     this.showReps = !this.showReps;
   };
+  toggleForm = () => {
+    this.showForm = !this.showForm;
+  };
+  checkMessage = () => {
+    this.showMessage = !this.showMessage;
+  };
+
   addFavorite(favorite: any) {
     this.service.addFavorite(favorite);
   }
+
+  submit = (form: NgForm) => {
+    this.emailSubject = form.value.subject;
+    this.emailBody = form.value.body;
+    this.email = form.value.email;
+  };
 
   ngOnInit(): void {}
 }
