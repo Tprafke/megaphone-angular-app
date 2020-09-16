@@ -11,6 +11,7 @@
     <button *ngIf="showReps === false" (click)="toggleCard()" class="showBtn">
       See More
     </button>
+    <button (click)="toggleForm()">Contact</button>
   </li>
 </div>
 <div *ngIf="showReps === true" class="card-container">
@@ -20,8 +21,36 @@
     <p>{{ repRef.name }}</p>
     <p>{{ repRef.titles }}</p>
     <p>{{ repRef.party }}</p>
-    <p>{{ repRef.phones }}</p>
-    <p>{{ repRef.emails }}</p>
+
+    <a href="tel:{{ repRef.phones }}">{{ repRef.phones }}</a>
+    <a href="mailto: {{ repRef.emails }}?Subject=Hello&body=what's up">{{
+      repRef.emails
+    }}</a>
+
     <a href="{{ repRef.urls }}" class="website">Website</a>
   </div>
+</div>
+<div *ngIf="showForm === true" class="form-container">
+  <form #contactInput="ngForm" (ngSubmit)="submit(contactInput)">
+    <label for="email">Enter your Email:</label>
+    <input type="text" name="email" id="email" ngModel />
+    <label for="subject">Subject:</label>
+    <input type="text" name="subject" id="subject" ngModel />
+    <label for="body">Message:</label>
+    <input type="text" name="body" id="body" ngModel />
+    <button (click)="checkMessage()"></button>
+  </form>
+</div>
+<div *ngIf="showMessage === true">
+  <p>{{ repRef.emails }}</p>
+  <p>{{ email }}</p>
+  <p>{{ emailSubject }}</p>
+  <p>{{ emailBody }}</p>
+
+  <a
+    href="mailto: {{ repRef.emails }}?Subject={{ emailSubject }}&body={{
+      emailBody
+    }}"
+    >Send</a
+  >
 </div>
