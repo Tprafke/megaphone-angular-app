@@ -1,15 +1,20 @@
-<form #addressInput="ngForm" (ngSubmit)="search()">
-  <label for="address" class="address-label">Address:</label>
-  <input
-    ngx-google-places-autocomplete
-    [options]="options"
-    #placesRef="ngx-places"
-    (onAddressChange)="handleAddressChange($event)"
-    type="text"
-    name="address"
-    id="address"
-    class="input"
-    ngModel
-  />
-  <button class="btn">Search</button>
-</form>
+<div class="address">
+  <p class="description">FIND YOUR REPRESENTATIVES</p>
+  <div class="form-div">
+    <form #addressInput="ngForm" (ngSubmit)="search()" class="form">
+      <!-- <label for="address" class="address-label">Address:</label> -->
+      <input
+        ngx-google-places-autocomplete
+        [options]="options"
+        #placesRef="ngx-places"
+        (onAddressChange)="handleAddressChange($event)"
+        type="text"
+        name="address"
+        id="address"
+        class="input"
+        ngModel
+      />
+      <button class="btn">Search</button>
+    </form>
+  </div>
+</div>

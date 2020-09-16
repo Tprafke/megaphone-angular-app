@@ -4,7 +4,7 @@
   list-style: none;
   background-color: #0a2852;
   color: white;
-  width: 50%;
+  width: 40%;
 }
 
 .image {
@@ -12,12 +12,8 @@
   width: auto;
 }
 
-.website {
-  color: white;
-}
-
 a:visited {
-  color: white;
+  color: #0a2852;
 }
 .card-container {
   width: 100%;
