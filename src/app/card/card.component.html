@@ -1,37 +1,42 @@
 <div>
   <li class="card">
-    <p>
-      <img src="{{ repRef.photoUrl }}" alt="" class="image" />
-    </p>
-    <p>{{ repRef.name }}</p>
-    <p>{{ repRef.titles }}</p>
-    <p>{{ repRef.party }}</p>
+    <img src="{{ repRef.photoUrl }}" alt="" class="image" />
 
-    <button class="showBtn btn" (click)="addFavorite(repRef)">Favorite</button>
-    <button
-      *ngIf="showReps === false"
-      (click)="toggleCard()"
-      class="showBtn btn"
-    >
-      See More
-    </button>
-    <button (click)="toggleForm()" class="btn">Contact</button>
+    <p class="text">{{ repRef.name }}</p>
+    <p class="text">{{ repRef.titles }}</p>
+    <p class="text">{{ repRef.party }}</p>
+    <div>
+      <button class="showBtn btn" (click)="addFavorite(repRef)">
+        Favorite
+      </button>
+      <button
+        *ngIf="showReps === false"
+        (click)="toggleCard()"
+        class="showBtn btn"
+      >
+        See More
+      </button>
+      <button (click)="toggleForm()" class="btn">Contact</button>
+    </div>
   </li>
 </div>
 <div *ngIf="showReps === true" class="card-container">
   <div class="rep-card">
     <button class="btnx" (click)="toggleCard()">X</button>
-    <img src="{{ repRef.photoUrl }}" alt="" class="image" />
-    <p>{{ repRef.name }}</p>
-    <p>{{ repRef.titles }}</p>
-    <p>{{ repRef.party }}</p>
 
-    <a href="tel:{{ repRef.phones }}">{{ repRef.phones }}</a>
-    <a href="mailto: {{ repRef.emails }}?Subject=Hello&body=what's up">{{
-      repRef.emails
-    }}</a>
+    <div class="rep">
+      <img src="{{ repRef.photoUrl }}" alt="" class="image" />
+      <p>{{ repRef.name }}</p>
+      <p>{{ repRef.titles }}</p>
+      <p>{{ repRef.party }}</p>
 
-    <a href="{{ repRef.urls }}" class="website">Website</a>
+      <a href="tel:{{ repRef.phones }}">{{ repRef.phones }}</a>
+      <a href="mailto: {{ repRef.emails }}?Subject=Hello&body=what's up">{{
+        repRef.emails
+      }}</a>
+
+      <a href="{{ repRef.urls }}" class="website">Website</a>
+    </div>
   </div>
 </div>
 <div *ngIf="showForm === true" class="form-container">

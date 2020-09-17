@@ -87,6 +87,7 @@
       brightness(83%) contrast(94%);
     height: 75px;
     width: auto;
+    display: block;
   }
 
   .text-logo {

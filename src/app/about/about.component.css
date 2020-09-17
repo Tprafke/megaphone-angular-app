@@ -1,6 +1,6 @@
 body {
   background-color: #0a2852;
-  height: 100vh;
+  height: 100%;
   color: white;
   display: flex;
   flex-direction: column;
@@ -9,30 +9,33 @@ body {
 .intro {
   display: flex;
   justify-content: center;
-  font-size: 36px;
+  font-size: 20px;
+  margin: 5px;
 }
 
 .about-card {
   display: flex;
   flex-direction: column;
   padding: 10px;
+  align-items: center;
 }
 
 .photos {
-  height: 400px;
-  width: 333px;
+  height: 300px;
+  width: 250px;
   border-radius: 10%;
 }
 
 .cards {
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .icons {
   display: flex;
-  justify-content: flex-start;
+  flex-direction: row;
 }
 
 .linkedin {
@@ -47,5 +50,25 @@ body {
 }
 
 .text {
+  display: flex;
+  flex-direction: column;
   font-size: 24px;
+  justify-content: flex-start;
+}
+
+@media only screen and (min-width: 768px) {
+  .photos {
+    height: 400px;
+    width: 333px;
+    border-radius: 10%;
+  }
+
+  .cards {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .intro {
+    font-size: 36px;
+  }
 }
