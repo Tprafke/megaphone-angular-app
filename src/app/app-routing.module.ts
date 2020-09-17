@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'favorites', component: FavoritesComponent },
   { path: 'about', component: AboutComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: '**', component: NotFoundComponent },
+  { path: '**', component: HomeComponent },
 ];
 
 @NgModule({

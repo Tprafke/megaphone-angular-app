@@ -2,6 +2,10 @@
   border: 1px solid black;
   text-decoration: none;
   list-style: none;
+  color: #0a2852;
+}
+a:visited {
+  color: #0a2852;
 }
 
 .image {
@@ -10,9 +14,15 @@
 }
 
 .website {
-  color: white;
+  color: #0a2852;
 }
 
-a:visited {
+.btn {
+  border-radius: 5px;
+  border-style: none;
+  background-color: #ff5c65;
   color: white;
+  padding: 5px;
+  margin: 5px;
+  font-family: "Open Sans", sans-serif;
 }
