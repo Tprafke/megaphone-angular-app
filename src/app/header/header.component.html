@@ -1,6 +1,15 @@
 <header class="header">
   <div class="nav-icons">
-    <h1 class="logo link" routerLink="/home" (click)="goBack()">Megaphone</h1>
+    <div class="text-logo">
+      <img
+        class="megaphone-icon"
+        src="../assets/megaphone1.svg"
+        alt="megaphone icon"
+        title="megaphone-icon"
+      />
+      <h1 class="logo link" routerLink="/home" (click)="goBack()">Megaphone</h1>
+    </div>
+
     <img
       src="../assets/menu.svg"
       alt="menu-icon"
@@ -11,10 +20,12 @@
     <div class="desktop-nav">
       <ul class="nav-links">
         <li class="nav-item">
-          <p routerLink="/favorites" class="link">Tracked Representatives</p>
+          <p routerLink="/favorites" class="link items">
+            Tracked Representatives
+          </p>
         </li>
         <li class="nav-item" routerLink="/">
-          <p routerLink="/about" class="link">About Us</p>
+          <p routerLink="/about" class="link items">About Us</p>
         </li>
       </ul>
     </div>

@@ -1,6 +1,51 @@
-.about-image {
-  height: 400px;
-  width: auto;
+body {
+  background-color: #0a2852;
+  height: 100vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.intro {
+  display: flex;
+  justify-content: center;
+  font-size: 36px;
+}
+
+.about-card {
+  display: flex;
+  flex-direction: column;
   padding: 10px;
+}
+
+.photos {
+  height: 400px;
+  width: 333px;
   border-radius: 10%;
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.icons {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.linkedin {
+  height: 30px;
+  width: auto;
+}
+
+.github {
+  height: 30px;
+  width: auto;
+  padding-left: 10px;
+}
+
+.text {
+  font-size: 24px;
 }

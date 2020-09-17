@@ -13,7 +13,9 @@
 .input {
   border: 0;
   border-bottom: 2px solid #0a2852;
-  width: 400px;
+  width: 500px;
+  display: flex;
+  justify-content: center;
 }
 
 .btn {
@@ -21,7 +23,10 @@
   background-color: #ff5c65;
   color: white;
   padding: 5px;
-  border-style: solid 1px #0a2852;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  margin: 5px;
 }
 
 .form-div {
@@ -31,5 +36,7 @@
 
 .form {
   display: flex;
+  justify-content: center;
   flex-direction: column;
+  align-items: center;
 }

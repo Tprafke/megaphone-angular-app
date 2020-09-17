@@ -52,17 +52,44 @@
     flex-direction: row;
   }
 
+  .nav-icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
   .desktop-nav {
     display: flex;
   }
 
   .header {
-    justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 0 40px;
   }
 
   .icon {
     display: none;
+  }
+
+  .logo {
+    font-size: 48px;
+    margin: 0px;
+  }
+
+  .items {
+    font-size: 24px;
+  }
+
+  .megaphone-icon {
+    filter: invert(12%) sepia(33%) saturate(4397%) hue-rotate(201deg)
+      brightness(83%) contrast(94%);
+    height: 75px;
+    width: auto;
+    justify-content: center;
+  }
+
+  .text-logo {
+    display: flex;
+    align-items: center;
   }
 }
