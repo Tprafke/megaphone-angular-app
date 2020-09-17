@@ -2,7 +2,9 @@
   background-color: white;
   color: #0a2852;
 }
-
+.megaphone-icon {
+  display: none;
+}
 .nav-icons {
   display: flex;
   justify-content: space-between;
@@ -85,7 +87,6 @@
       brightness(83%) contrast(94%);
     height: 75px;
     width: auto;
-    justify-content: center;
   }
 
   .text-logo {

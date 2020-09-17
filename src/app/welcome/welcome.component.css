@@ -32,11 +32,11 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 5%;
+  background-color: rgba(255, 255, 255, 0.6);
+
   color: #0a2852;
-  height: 60%;
-  width: 50%;
+  height: 100%;
+  width: 100%;
 }
 
 .megaphone-icon {
@@ -47,5 +47,13 @@
   margin: 0px;
   padding: 0px;
 }
-/* 
-@media only screen and (min-width: 768px) */
+
+@media only screen and (min-width: 768px) {
+  .container {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5%;
+    color: #0a2852;
+    width: 50%;
+    height: 60%;
+  }
+}

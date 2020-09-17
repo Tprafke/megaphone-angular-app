@@ -7,11 +7,15 @@
     <p>{{ repRef.titles }}</p>
     <p>{{ repRef.party }}</p>
 
-    <button class="showBtn" (click)="addFavorite(repRef)">Track Rep</button>
-    <button *ngIf="showReps === false" (click)="toggleCard()" class="showBtn">
+    <button class="showBtn btn" (click)="addFavorite(repRef)">Favorite</button>
+    <button
+      *ngIf="showReps === false"
+      (click)="toggleCard()"
+      class="showBtn btn"
+    >
       See More
     </button>
-    <button (click)="toggleForm()">Contact</button>
+    <button (click)="toggleForm()" class="btn">Contact</button>
   </li>
 </div>
 <div *ngIf="showReps === true" class="card-container">
@@ -38,7 +42,7 @@
     <input type="text" name="subject" id="subject" ngModel />
     <label for="body">Message:</label>
     <input type="text" name="body" id="body" ngModel />
-    <button (click)="checkMessage()"></button>
+    <button (click)="checkMessage()">Done</button>
   </form>
 </div>
 <div *ngIf="showMessage === true">
