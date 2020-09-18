@@ -36,6 +36,18 @@
       }}</a>
 
       <a href="{{ repRef.urls }}" class="website">Website</a>
+      <a
+        href="https://www.{{ repRef.channels[0].type }}.com/{{
+          repRef.channels[0].id
+        }}"
+        >{{ repRef.channels[0].type }}</a
+      >
+      <a
+        href="https://www.{{ repRef.channels[1].type }}.com/{{
+          repRef.channels[1].id
+        }}"
+        >{{ repRef.channels[1].type }}</a
+      >
     </div>
   </div>
 </div>
