@@ -1,9 +1,25 @@
 <li class="card">
   <img src="{{ favoriteRef.photoUrl }}" class="image" />
   <p class="label">{{ favoriteRef.name }}</p>
-  <p class="label">{{ favoriteRef.phones }}</p>
-  <p class="label">{{ favoriteRef.emails }}</p>
-  <a href="{{ favoriteRef.urls }}" class="Website">Website</a>
-
+  <p class="label">{{ favoriteRef.titles }}</p>
+  <button *ngIf="showReps === false" (click)="toggleCard()" class="showBtn btn">
+    See More
+  </button>
   <button class="btn" (click)="deleteFavorite()">Remove</button>
 </li>
+<div *ngIf="showReps === true" class="card-container">
+  <div class="rep-card">
+    <button class="btnx" (click)="toggleCard()">X</button>
+    <div class="rep">
+      <img src="{{ favoriteRef.photoUrl }}" alt="" class="image" />
+      <p class="label">{{ favoriteRef.name }}</p>
+      <p class="label">{{ favoriteRef.titles }}</p>
+      <p class="label">{{ favoriteRef.party }}</p>
+      <a href="tel:{{ favoriteRef.phones }}">{{ favoriteRef.phones }}</a>
+      <a href="mailto: {{ favoriteRef.emails }}?Subject=Hello&body=what's up">{{
+        favoriteRef.emails
+      }}</a>
+      <a href="{{ favoriteRef.urls }}" class="website">Website</a>
+    </div>
+  </div>
+</div>

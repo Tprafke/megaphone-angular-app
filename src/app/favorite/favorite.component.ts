@@ -8,10 +8,15 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class FavoriteComponent implements OnInit {
   @Input() favoriteRef: any;
   @Output() deleted = new EventEmitter<void>();
+  showReps: boolean = false;
   constructor() {}
 
   deleteFavorite() {
     this.deleted.emit();
   }
+
+  toggleCard = () => {
+    this.showReps = !this.showReps;
+  };
   ngOnInit(): void {}
 }
