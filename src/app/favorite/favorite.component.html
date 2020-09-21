@@ -20,6 +20,18 @@
         favoriteRef.emails
       }}</a>
       <a href="{{ favoriteRef.urls }}" class="website">Website</a>
+      <a
+        href="https://www.{{ favoriteRef.channels[0].type }}.com/{{
+          favoriteRef.channels[0].id
+        }}"
+        >{{ favoriteRef.channels[0].type }}</a
+      >
+      <a
+        href="https://www.{{ favoriteRef.channels[1].type }}.com/{{
+          favoriteRef.channels[1].id
+        }}"
+        >{{ favoriteRef.channels[1].type }}</a
+      >
     </div>
   </div>
 </div>

@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 export class CardContainerComponent implements OnInit {
   offices: any;
   officials: any;
+  placeholder = '../assets/placeholder.svg';
   constructor(
     private route: ActivatedRoute,
     private service: MegaphoneService
@@ -33,9 +34,14 @@ export class CardContainerComponent implements OnInit {
 
         this.officials.forEach((official, index) => {
           official.titles = [];
+          official.levels = [];
+          if (official.photoUrl === undefined) {
+            official.photoUrl = this.placeholder;
+          }
           this.offices.forEach((office) => {
             if (office.officialIndices.includes(index)) {
               official.titles.push(office.name);
+              official.levels.push(office.levels);
             }
           });
         });
