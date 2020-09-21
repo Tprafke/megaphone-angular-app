@@ -56,9 +56,13 @@ a:visited {
   margin: 15px;
   border: 1px solid #393d3f;
   border-radius: 5px;
+  width: 322px;
 }
 .rep {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.label {
+  margin: 3px;
 }

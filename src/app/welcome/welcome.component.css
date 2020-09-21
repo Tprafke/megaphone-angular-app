@@ -54,6 +54,7 @@
     border-radius: 5%;
     color: #0a2852;
     width: 50%;
+    max-width: 550px;
     height: 60%;
   }
 }

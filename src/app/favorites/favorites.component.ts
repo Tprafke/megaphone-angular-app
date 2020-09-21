@@ -8,6 +8,7 @@ import { MegaphoneService } from '../megaphone.service';
 })
 export class FavoritesComponent implements OnInit {
   favorites = [];
+  favEmails = [];
   constructor(private service: MegaphoneService) {}
 
   getFavorite() {
@@ -18,7 +19,14 @@ export class FavoritesComponent implements OnInit {
     this.favorites.splice(index, 1);
   }
 
+  contactFavorites = () => {
+    this.favorites.forEach((favorite) => {
+      this.favEmails.push(favorite.emails);
+    });
+  };
+
   ngOnInit(): void {
     this.getFavorite();
+    this.contactFavorites();
   }
 }
