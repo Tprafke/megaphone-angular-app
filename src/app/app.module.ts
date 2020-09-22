@@ -16,6 +16,7 @@ import { CountdownComponent } from './countdown/countdown.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { GooglePlaceModule } from 'ngx-google-places-autocomplete';
 import { FavoriteComponent } from './favorite/favorite.component';
+import { NgxSimpleCountdownModule } from 'ngx-simple-countdown';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { FavoriteComponent } from './favorite/favorite.component';
     FormsModule,
     HttpClientModule,
     GooglePlaceModule,
+    NgxSimpleCountdownModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
