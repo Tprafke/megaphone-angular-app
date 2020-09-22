@@ -1,0 +1,26 @@
+<footer class="footer">
+  <div class="content">
+    <a href="https://vote.gov/" class="register">Register to Vote</a>
+
+    <div class="countdown">
+      <p class="time">Time until next election:</p>
+      <div
+        class="timer"
+        simpleCountdown
+        [dateTo]="1604404800"
+        [language]="'en'"
+        [endMessage]="'Election Day'"
+        [styles]="
+          '
+  background-color: white;
+  color: #ff5c65;
+  font-size: 24px;
+  text-align:center;
+  padding: 0 5px;
+'
+        "
+      ></div>
+    </div>
+    <a href="#" class="top">Back to Top</a>
+  </div>
+</footer>

@@ -1,6 +1,5 @@
 body {
   background-color: #0a2852;
-  height: 100%;
   color: white;
   display: flex;
   flex-direction: column;
@@ -76,6 +75,9 @@ body {
   margin: 2px;
   margin-bottom: 5px;
 }
+.blank {
+  height: 80px;
+}
 
 @media only screen and (min-width: 768px) {
   .photos {
@@ -93,7 +95,11 @@ body {
     font-size: 36px;
   }
 
-  body {
+  .blank {
+    height: 50px;
+  }
+
+  .body {
     height: 100vh;
   }
 }
