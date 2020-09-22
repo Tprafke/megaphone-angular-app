@@ -22,15 +22,11 @@ export class CardContainerComponent implements OnInit {
 
   getReps = () => {
     this.route.queryParamMap.subscribe((params) => {
-      console.log(params);
       let address: any = params['params'];
-      console.log(address.address);
+
       this.service.getData(address.address).subscribe((response) => {
-        //this.representatives = response;
         this.offices = response.offices;
         this.officials = response.officials;
-
-        console.log(this.offices);
 
         this.officials.forEach((official, index) => {
           official.titles = [];
