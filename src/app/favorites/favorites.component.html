@@ -1,5 +1,57 @@
 <app-header></app-header>
-<div><a href="mailto: {{ favEmails }}">Send</a></div>
+<div class="btn-container">
+  <button (click)="toggleContact()" class="btn">Contact All</button>
+</div>
+<div *ngIf="showContact === true" class="contact-container">
+  <div class="form-container">
+    <button class="btnx" (click)="toggleContact()">X</button>
+    <form
+      #contactInput="ngForm"
+      (ngSubmit)="submit(contactInput)"
+      class="form"
+      id="msg-form"
+    >
+      <label class="item" for="email">Enter your Email:</label>
+      <input class="item" type="text" name="email" id="email" ngModel />
+      <label class="item" for="subject">Subject:</label>
+      <input class="item" type="text" name="subject" id="subject" ngModel />
+      <label class="item" for="body">Message:</label>
+      <textarea
+        class="item"
+        rows="8"
+        cols="50"
+        name="body"
+        form="msg-form"
+        ngModel
+      >
+Enter text here...</textarea
+      >
+      <button (click)="checkMessage()" class="btn">Review Message</button>
+    </form>
+  </div>
+</div>
+<div *ngIf="showMessage === true" class="contact-container">
+  <div class="msg-container">
+    <button (click)="checkMessage()" class="b">Back</button>
+    <div class="check-message">
+      <p class="item">Your Email:</p>
+      <p class="item">{{ email }}</p>
+      <p class="item">Subject:</p>
+      <p class="item">{{ emailSubject }}</p>
+      <p class="item">Message:</p>
+      <p class="item">{{ emailBody }}</p>
+      <div class="item send">
+        <a
+          (click)="send()"
+          href="mailto: {{ favEmails }}?Subject={{ emailSubject }}&body={{
+            emailBody
+          }}"
+          >Send</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
 <ul class="card-container">
   <app-favorite
     *ngFor="let favorite of favorites; index as i"

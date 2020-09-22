@@ -24,11 +24,17 @@ export class CardComponent implements OnInit {
   };
   checkMessage = () => {
     this.showMessage = !this.showMessage;
+    // this.toggleForm();
   };
 
   addFavorite(favorite: any) {
     this.service.addFavorite(favorite);
   }
+
+  send = () => {
+    this.showForm = !this.showForm;
+    this.showMessage = !this.showMessage;
+  };
 
   submit = (form: NgForm) => {
     this.emailSubject = form.value.subject;
