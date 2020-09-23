@@ -8,7 +8,10 @@
     <div>
       <button
         class="showBtn btn"
-        [ngClass]="{ 'original-btn': toggle, 'change-btn': !toggle }"
+        [ngClass]="{
+          'original-btn': toggle === false,
+          'change-btn': toggle === true
+        }"
         (click)="addFavorite(repRef)"
       >
         Favorite
