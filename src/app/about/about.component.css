@@ -1,4 +1,5 @@
-body {
+.body {
+  height: 100%;
   background-color: #0a2852;
   color: white;
   display: flex;
@@ -96,10 +97,15 @@ body {
   }
 
   .blank {
-    height: 50px;
+    height: 60px;
   }
+}
 
+@media only screen and (min-width: 1426px) {
   .body {
     height: 100vh;
+  }
+  .blank {
+    height: 0;
   }
 }

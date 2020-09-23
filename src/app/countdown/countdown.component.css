@@ -42,15 +42,8 @@ a:visited {
 .top {
   display: none;
 }
-
 .btn {
-  border-radius: 5px;
-  border-style: none;
-  background-color: #ff5c65;
-  color: white;
-  padding: 5px;
-  margin: 5px;
-  font-family: "Open Sans", sans-serif;
+  display: none;
 }
 
 @media only screen and (min-width: 768px) {
@@ -82,5 +75,20 @@ a:visited {
 
   .countdown {
     flex-direction: row;
+  }
+
+  .btn {
+    display: flex;
+    color: #0a2852;
+    border: none;
+    background: none;
+    padding: 0;
+    font-size: 24px;
+    font-family: "DM Serif Text", serif;
+    cursor: pointer;
+  }
+
+  .btn:hover {
+    color: #ff5c65;
   }
 }
