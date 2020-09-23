@@ -25,6 +25,7 @@
   display: flex;
   justify-content: center;
   margin: 5px 0 0 0;
+  font-style: italic;
 }
 
 .container {
