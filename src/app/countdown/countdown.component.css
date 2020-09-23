@@ -7,7 +7,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80px;
+  height: auto;
 }
 
 .countdown {
@@ -41,6 +41,16 @@ a:visited {
 
 .top {
   display: none;
+}
+
+.btn {
+  border-radius: 5px;
+  border-style: none;
+  background-color: #ff5c65;
+  color: white;
+  padding: 5px;
+  margin: 5px;
+  font-family: "Open Sans", sans-serif;
 }
 
 @media only screen and (min-width: 768px) {
