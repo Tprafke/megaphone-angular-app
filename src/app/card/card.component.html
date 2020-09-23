@@ -6,7 +6,11 @@
     <p class="text">{{ repRef.titles }}</p>
     <p class="text">{{ repRef.party }}</p>
     <div>
-      <button class="showBtn btn" (click)="addFavorite(repRef)">
+      <button
+        class="showBtn btn"
+        [ngClass]="{ 'original-btn': toggle, 'change-btn': !toggle }"
+        (click)="addFavorite(repRef)"
+      >
         Favorite
       </button>
       <button

@@ -15,6 +15,7 @@ export class CardComponent implements OnInit {
   email: string;
   emailBody: string;
   emailSubject: string;
+  toggle = true;
   constructor(private service: MegaphoneService) {}
   toggleCard = () => {
     this.showReps = !this.showReps;
@@ -22,6 +23,11 @@ export class CardComponent implements OnInit {
   toggleForm = () => {
     this.showForm = !this.showForm;
   };
+
+  // toggleButtonColor = () => {
+
+  // };
+
   checkMessage = () => {
     this.showMessage = !this.showMessage;
     // this.toggleForm();
@@ -29,6 +35,7 @@ export class CardComponent implements OnInit {
 
   addFavorite(favorite: any) {
     this.service.addFavorite(favorite);
+    this.toggle = !this.toggle;
   }
 
   send = () => {
