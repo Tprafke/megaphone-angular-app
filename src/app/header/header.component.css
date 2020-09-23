@@ -16,7 +16,6 @@
 .mobile-nav {
   display: flex;
   padding: 0;
-  height: 0;
 }
 
 .nav-links {
