@@ -14,16 +14,4 @@ export class HomeComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {}
-
-  // getRecipes = () => {
-  //   this.route.queryParamMap.subscribe((params) => {
-  //     console.log(params);
-  //     let test: any = params['params'];
-  //     console.log(test);
-  //     this.service.getData(test).subscribe((response) => {
-  //       console.log(response);
-  //       this.recipes = response.hits;
-  //     });
-  //   });
-  // };
 }
