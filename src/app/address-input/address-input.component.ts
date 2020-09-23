@@ -27,6 +27,7 @@ export class AddressInputComponent implements OnInit {
   search = () => {
     document.body.scrollTop = 500; // For Safari
     document.documentElement.scrollTop = 500; // For Chrome, Firefox, IE and Opera
+    console.log(this.formattedAddress);
     this.router.navigate(['home'], {
       queryParams: {
         address: this.formattedAddress,

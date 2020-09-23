@@ -2,10 +2,16 @@
   <img src="{{ favoriteRef.photoUrl }}" class="image" />
   <p class="label">{{ favoriteRef.name }}</p>
   <p class="label">{{ favoriteRef.titles }}</p>
-  <button *ngIf="showReps === false" (click)="toggleCard()" class="showBtn btn">
-    See More
-  </button>
-  <button class="btn" (click)="deleteFavorite()">Remove</button>
+  <div class="btn-container">
+    <button
+      *ngIf="showReps === false"
+      (click)="toggleCard()"
+      class="showBtn btn"
+    >
+      See More
+    </button>
+    <button class="btn" (click)="deleteFavorite()">Remove</button>
+  </div>
 </li>
 <div *ngIf="showReps === true" class="card-container">
   <div class="rep-card">

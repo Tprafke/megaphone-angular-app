@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Location } from '@angular/common';
+
 import { MegaphoneService } from '../megaphone.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -9,15 +10,28 @@ import { MegaphoneService } from '../megaphone.service';
 })
 export class HeaderComponent implements OnInit {
   showNav = false;
-
-  constructor(private location: Location, private service: MegaphoneService) {}
+  address: string;
+  constructor(
+    private service: MegaphoneService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
   toggleNav = () => {
     this.showNav = !this.showNav;
   };
 
   goBack() {
-    this.location.back();
+    this.router.navigate(['home'], {
+      queryParams: {
+        address: this.address,
+      },
+    });
   }
+  getAddress = () => {
+    this.address = this.service.getAddress();
+  };
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getAddress();
+  }
 }
