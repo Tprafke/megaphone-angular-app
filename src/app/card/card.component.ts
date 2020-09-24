@@ -16,12 +16,32 @@ export class CardComponent implements OnInit {
   emailBody: string;
   emailSubject: string;
   toggle = false;
+  facebook: boolean = false;
+  twitter: boolean = false;
+  channels: boolean = true;
   constructor(private service: MegaphoneService) {}
   toggleCard = () => {
     this.showReps = !this.showReps;
+    this.checkIcons();
   };
   toggleForm = () => {
     this.showForm = !this.showForm;
+  };
+
+  checkIcons = () => {
+    if (this.repRef.channels === undefined) {
+      this.facebook = false;
+      this.twitter = false;
+    } else {
+      this.repRef.channels.forEach((channel) => {
+        if (channel.type === 'Facebook') {
+          this.facebook = true;
+        }
+        if (channel.type === 'Twitter') {
+          this.twitter = true;
+        }
+      });
+    }
   };
 
   togFav = () => {
