@@ -18,6 +18,7 @@ export class FavoriteComponent implements OnInit {
   deleteFavorite() {
     this.deleted.emit();
   }
+
   checkIcons = () => {
     if (this.favoriteRef.urls === undefined) {
       this.hasWebsite = false;
@@ -25,24 +26,12 @@ export class FavoriteComponent implements OnInit {
     if (this.favoriteRef.emails === undefined) {
       this.hasEmail = false;
     }
-    if (this.favoriteRef.channels === undefined) {
-      this.facebook = false;
-      this.twitter = false;
-    } else {
-      this.favoriteRef.channels.forEach((channel) => {
-        if (channel.type === 'Facebook') {
-          this.facebook = true;
-        }
-        if (channel.type === 'Twitter') {
-          this.twitter = true;
-        }
-      });
-    }
   };
 
   toggleCard = () => {
     this.showReps = !this.showReps;
-    this.checkIcons();
   };
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.checkIcons();
+  }
 }

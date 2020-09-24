@@ -24,7 +24,6 @@ export class CardComponent implements OnInit {
   constructor(private service: MegaphoneService) {}
   toggleCard = () => {
     this.showReps = !this.showReps;
-    this.checkIcons();
   };
   toggleForm = () => {
     this.showForm = !this.showForm;
@@ -36,19 +35,6 @@ export class CardComponent implements OnInit {
     }
     if (this.repRef.emails === undefined) {
       this.hasEmail = false;
-    }
-    if (this.repRef.channels === undefined) {
-      this.facebook = false;
-      this.twitter = false;
-    } else {
-      this.repRef.channels.forEach((channel) => {
-        if (channel.type === 'Facebook') {
-          this.facebook = true;
-        }
-        if (channel.type === 'Twitter') {
-          this.twitter = true;
-        }
-      });
     }
   };
 
@@ -80,5 +66,6 @@ export class CardComponent implements OnInit {
 
   ngOnInit(): void {
     this.togFav();
+    this.checkIcons();
   }
 }

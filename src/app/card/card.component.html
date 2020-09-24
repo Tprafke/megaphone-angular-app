@@ -73,86 +73,60 @@
               alt="{{ channel.type }} icon"
           /></a>
         </div>
-
-        <!-- <a
-          *ngIf="facebook === true"
-          href="https://www.{{ repRef.channels[0].type }}.com/{{
-            repRef.channels[0].id
-          }}"
-          target="_blank"
-          ><img
-            *ngIf="facebook === true"
-            class="icon facebook"
-            src="../assets/facebook.png"
-            alt="facebook icon"
-        /></a>
-        <a
-          *ngIf="twitter === true"
-          href="https://www.{{ repRef.channels[1].type }}.com/{{
-            repRef.channels[1].id
-          }}"
-          target="_blank"
-        >
-          <img
-            *ngIf="twitter === true"
-            class="icon twitter"
-            src="../assets/twitter.png"
-            alt="Twitter icon"
-          />
-        </a> -->
       </div>
     </div>
   </div>
-  <div *ngIf="showForm === true" class="card-container">
-    <div class="form-container">
-      <button (click)="toggleForm()" class="b">X</button>
-      <form
-        #contactInput="ngForm"
-        (ngSubmit)="submit(contactInput)"
-        class="form"
-        id="msg-form"
-      >
-        <label class="item" for="email">Enter your Email:</label>
-        <input class="item" type="text" name="email" id="email" ngModel />
-        <label class="item" for="subject">Subject:</label>
-        <input class="item" type="text" name="subject" id="subject" ngModel />
-        <label class="item" for="body">Message:</label>
+</div>
+<!-- End Show Reps -->
+<div *ngIf="showForm === true" class="card-container">
+  <div class="form-container">
+    <button (click)="toggleForm()" class="b">X</button>
+    <form
+      #contactInput="ngForm"
+      (ngSubmit)="submit(contactInput)"
+      class="form"
+      id="msg-form"
+    >
+      <label class="item" for="email">Enter your Email:</label>
+      <input class="item" type="text" name="email" id="email" ngModel />
+      <label class="item" for="subject">Subject:</label>
+      <input class="item" type="text" name="subject" id="subject" ngModel />
+      <label class="item" for="body">Message:</label>
 
-        <textarea
-          class="item"
-          rows="8"
-          cols="50"
-          name="body"
-          form="msg-form"
-          ngModel
-        >
+      <textarea
+        class="item"
+        rows="8"
+        cols="50"
+        name="body"
+        form="msg-form"
+        ngModel
+      >
 Enter text here...</textarea
-        >
-        <button (click)="checkMessage()" class="btn">Review Message</button>
-      </form>
-    </div>
+      >
+      <button (click)="checkMessage()" class="btn">Review Message</button>
+    </form>
   </div>
-  <div *ngIf="showMessage === true" class="card-container">
-    <div class="msg-container">
-      <button (click)="checkMessage()" class="b">Back</button>
-      <div class="check-message">
-        <p class="item">Your Email:</p>
-        <p class="item">{{ email }}</p>
-        <p class="item">Recipient Email:</p>
-        <p class="item">{{ repRef.emails }}</p>
-        <p class="item">Subject:</p>
-        <p class="item">{{ emailSubject }}</p>
-        <p class="item">Message:</p>
-        <p class="item">{{ emailBody }}</p>
-        <div class="item send">
-          <a
-            (click)="send()"
-            href="mailto: {{ repRef.emails }}?Subject={{ emailSubject }}&body={{
-              emailBody
-            }}"
-            >Send</a
-          >
-        </div>
+</div>
+<div *ngIf="showMessage === true" class="card-container">
+  <div class="msg-container">
+    <button (click)="checkMessage()" class="b">Back</button>
+    <div class="check-message">
+      <p class="item">Your Email:</p>
+      <p class="item">{{ email }}</p>
+      <p class="item">Recipient Email:</p>
+      <p class="item">{{ repRef.emails }}</p>
+      <p class="item">Subject:</p>
+      <p class="item">{{ emailSubject }}</p>
+      <p class="item">Message:</p>
+      <p class="item">{{ emailBody }}</p>
+      <div class="item send">
+        <a
+          (click)="send()"
+          href="mailto: {{ repRef.emails }}?Subject={{ emailSubject }}&body={{
+            emailBody
+          }}"
+          >Send</a
+        >
       </div>
     </div>
   </div>
