@@ -38,23 +38,35 @@
       <p class="label">{{ repRef.party }}</p>
 
       <a href="tel:{{ repRef.phones }}">{{ repRef.phones }}</a>
-      <a href="mailto: {{ repRef.emails }}?Subject=Hello&body=what's up">{{
-        repRef.emails
-      }}</a>
+      <a href="mailto: {{ repRef.emails }}">{{ repRef.emails }}</a>
 
       <a href="{{ repRef.urls }}" class="website">Website</a>
       <a
+        *ngIf="facebook === true"
         href="https://www.{{ repRef.channels[0].type }}.com/{{
           repRef.channels[0].id
         }}"
-        >{{ repRef.channels[0].type }}</a
-      >
+        target="_blank"
+        ><img
+          *ngIf="facebook === true"
+          class="icon facebook"
+          src="../assets/facebook-black.png"
+          alt="facebook-icon"
+      /></a>
       <a
+        *ngIf="twitter === true"
         href="https://www.{{ repRef.channels[1].type }}.com/{{
           repRef.channels[1].id
         }}"
-        >{{ repRef.channels[1].type }}</a
+        target="_blank"
       >
+        <img
+          *ngIf="twitter === true"
+          class="icon twitter"
+          src="../assets/twitter-black.png"
+          alt="Twitter icon"
+        />
+      </a>
     </div>
   </div>
 </div>
