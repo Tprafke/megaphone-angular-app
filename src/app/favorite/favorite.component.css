@@ -64,6 +64,7 @@ a:visited {
 .btn:hover {
   color: #0a2852;
   background-color: white;
+  cursor: pointer;
 }
 .rep-card {
   background-color: white;
