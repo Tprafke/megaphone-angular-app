@@ -47,6 +47,10 @@
   margin: 5px;
   font-family: "Open Sans", sans-serif;
 }
+.btn:hover {
+  background-color: #0a2852;
+  color: white;
+}
 .msg-container {
   background-color: white;
   padding: 10px;

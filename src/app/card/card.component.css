@@ -28,6 +28,10 @@
   color: white;
   font-family: "Open Sans", sans-serif;
 }
+.btn:hover {
+  color: #0a2852;
+  background-color: white;
+}
 
 .original-btn {
   background-color: #ff5c65;

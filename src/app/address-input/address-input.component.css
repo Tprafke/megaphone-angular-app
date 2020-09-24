@@ -26,6 +26,10 @@
   width: 200px;
   margin: 5px;
 }
+.btn:hover {
+  background-color: #0a2852;
+  color: white;
+}
 
 .form-div {
   display: flex;
