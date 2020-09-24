@@ -116,3 +116,14 @@ a:visited {
   display: flex;
   justify-content: center;
 }
+
+.icon {
+  height: 30px;
+  width: auto;
+  padding: 5px;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+}
