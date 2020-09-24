@@ -11,12 +11,20 @@ export class FavoriteComponent implements OnInit {
   showReps: boolean = false;
   facebook: boolean = false;
   twitter: boolean = false;
+  hasEmail: boolean = true;
+  hasWebsite: boolean = true;
   constructor() {}
 
   deleteFavorite() {
     this.deleted.emit();
   }
   checkIcons = () => {
+    if (this.favoriteRef.urls === undefined) {
+      this.hasWebsite = false;
+    }
+    if (this.favoriteRef.emails === undefined) {
+      this.hasEmail = false;
+    }
     if (this.favoriteRef.channels === undefined) {
       this.facebook = false;
       this.twitter = false;

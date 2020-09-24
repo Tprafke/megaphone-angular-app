@@ -19,6 +19,8 @@ export class CardComponent implements OnInit {
   facebook: boolean = false;
   twitter: boolean = false;
   channels: boolean = true;
+  hasEmail: boolean = true;
+  hasWebsite: boolean = true;
   constructor(private service: MegaphoneService) {}
   toggleCard = () => {
     this.showReps = !this.showReps;
@@ -29,6 +31,12 @@ export class CardComponent implements OnInit {
   };
 
   checkIcons = () => {
+    if (this.repRef.urls === undefined) {
+      this.hasWebsite = false;
+    }
+    if (this.repRef.emails === undefined) {
+      this.hasEmail = false;
+    }
     if (this.repRef.channels === undefined) {
       this.facebook = false;
       this.twitter = false;
