@@ -40,23 +40,41 @@
       <a href="tel:{{ repRef.phones }}">{{ repRef.phones }}</a>
 
       <div class="icons">
-        <a href="mailto: {{ repRef.emails }}"
-          >{{ repRef.emails }}
+        <a
+          *ngIf="hasEmail === true"
+          href="mailto: {{ repRef.emails }}"
+          title="{{ repRef.emails }}"
+        >
           <img
+            *ngIf="hasEmail === true"
             src="../assets/email.png"
             alt="icon that links to email"
             class="email icon"
           />
         </a>
 
-        <a href="{{ repRef.urls }}">
+        <a *ngIf="hasWebsite === true" href="{{ repRef.urls }}" target="_blank">
           <img
+            *ngIf="hasWebsite === true"
             src="../assets/website.png"
             alt="icon that links to website"
             class="website icon"
           />
         </a>
-        <a
+
+        <div *ngFor="let channel of repRef.channels">
+          <a
+            href="https://www.{{ channel.type }}.com/{{ channel.id }}"
+            target="_blank"
+          >
+            <img
+              class="icon {{ channel.type }}"
+              src="../assets/{{ channel.type }}.png"
+              alt="{{ channel.type }} icon"
+          /></a>
+        </div>
+
+        <!-- <a
           *ngIf="facebook === true"
           href="https://www.{{ repRef.channels[0].type }}.com/{{
             repRef.channels[0].id
@@ -81,7 +99,7 @@
             src="../assets/twitter.png"
             alt="Twitter icon"
           />
-        </a>
+        </a> -->
       </div>
     </div>
   </div>

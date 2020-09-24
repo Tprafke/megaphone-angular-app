@@ -23,22 +23,45 @@
       <p class="label">{{ favoriteRef.party }}</p>
       <a href="tel:{{ favoriteRef.phones }}">{{ favoriteRef.phones }}</a>
       <div class="icons">
-        <a href="mailto: {{ favoriteRef.emails }}"
-          >{{ favoriteRef.emails }}
+        <a
+          *ngIf="hasEmail === true"
+          href="mailto: {{ favoriteRef.emails }}"
+          title="{{ favoriteRef.emails }}"
+        >
           <img
+            *ngIf="hasEmail === true"
             src="../assets/email.png"
             alt="icon that links to email"
             class="email icon"
           />
         </a>
-        <a href="{{ favoriteRef.urls }}" class="website">
+        <a
+          *ngIf="hasWebsite === true"
+          href="{{ favoriteRef.urls }}"
+          target="_blank"
+          class="website"
+        >
           <img
+            *ngIf="hasWebsite === true"
             src="../assets/website.png"
             alt="icon that links to website"
             class="website icon"
           />
         </a>
-        <a
+
+        <div *ngFor="let channel of favoriteRef.channels">
+          <a
+            href="https://www.{{ channel.type }}.com/{{ channel.id }}"
+            target="_blank"
+          >
+            <img
+              class="icon {{ channel.type }}"
+              src="../assets/{{ channel.type }}.png"
+              alt="{{ channel.type }} icon"
+          /></a>
+        </div>
+
+        <!-- <a
           *ngIf="facebook === true"
           href="https://www.{{ favoriteRef.channels[0].type }}.com/{{
             favoriteRef.channels[0].id
@@ -63,7 +86,7 @@
             src="../assets/twitter.png"
             alt="Twitter icon"
           />
-        </a>
+        </a> -->
       </div>
     </div>
   </div>
