@@ -22,36 +22,49 @@
       <p class="label">{{ favoriteRef.titles }}</p>
       <p class="label">{{ favoriteRef.party }}</p>
       <a href="tel:{{ favoriteRef.phones }}">{{ favoriteRef.phones }}</a>
-      <a href="mailto: {{ favoriteRef.emails }}?Subject=Hello&body=what's up">{{
-        favoriteRef.emails
-      }}</a>
-      <a href="{{ favoriteRef.urls }}" class="website">Website</a>
-      <a
-        *ngIf="facebook === true"
-        href="https://www.{{ favoriteRef.channels[0].type }}.com/{{
-          favoriteRef.channels[0].id
-        }}"
-        target="_blank"
-        ><img
+      <div class="icons">
+        <a href="mailto: {{ favoriteRef.emails }}"
+          >{{ favoriteRef.emails }}
+          <img
+            src="../assets/email.png"
+            alt="icon that links to email"
+            class="email icon"
+          />
+        </a>
+        <a href="{{ favoriteRef.urls }}" class="website">
+          <img
+            src="../assets/website.png"
+            alt="icon that links to website"
+            class="website icon"
+          />
+        </a>
+        <a
           *ngIf="facebook === true"
-          class="icon facebook"
-          src="../assets/facebook-black.png"
-          alt="facebook-icon"
-      /></a>
-      <a
-        *ngIf="twitter === true"
-        href="https://www.{{ favoriteRef.channels[1].type }}.com/{{
-          favoriteRef.channels[1].id
-        }}"
-        target="_blank"
-      >
-        <img
+          href="https://www.{{ favoriteRef.channels[0].type }}.com/{{
+            favoriteRef.channels[0].id
+          }}"
+          target="_blank"
+          ><img
+            *ngIf="facebook === true"
+            class="icon facebook"
+            src="../assets/facebook.png"
+            alt="facebook-icon"
+        /></a>
+        <a
           *ngIf="twitter === true"
-          class="icon twitter"
-          src="../assets/twitter-black.png"
-          alt="Twitter icon"
-        />
-      </a>
+          href="https://www.{{ favoriteRef.channels[1].type }}.com/{{
+            favoriteRef.channels[1].id
+          }}"
+          target="_blank"
+        >
+          <img
+            *ngIf="twitter === true"
+            class="icon twitter"
+            src="../assets/twitter.png"
+            alt="Twitter icon"
+          />
+        </a>
+      </div>
     </div>
   </div>
 </div>
