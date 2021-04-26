@@ -1,7 +1,6 @@
 # Megaphone
 
-View Megaphone here:
-https://megaphone.surge.sh/home
+### [Live Site](https://megaphone.surge.sh/home)
 
 ## Description
 
